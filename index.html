@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>汇学邦国庆特别活动</title>
+</head>
+<body>
+	
+<div class="clearfix main">
+	<div class="logo">
+		<div class="main_join clearfix">
+			<div class="immediately_register" id="immediately_register"></div>
+		</div>
+	</div>
+	
+</div>
+
+	<!-- 注册成功 -->
+	<div class="modal" id="modal_success" style="display:none;">
+		<!-- 注册成功 -->
+		<div class="modal_con modal_sucess">
+				<div class="success" id="success"></div>
+				<a class="downLoad" id="modal_downLoad"></a>
+		</div>
+	</div>
+
+	<!-- 注册 -->
+	<div class="modal" id="modal_register" style="display:none;" >
+		<div class="modal_con">
+			<div class="clearfix register_content">
+				<div class="clearfix register_main">
+						<input class="register_item" id="phoneNo" type="text" placeholder="请输入你的手机号">
+						<input class="register_item" id="passwordNo" type="password" placeholder="请设置6～14位的密码">
+						<div class="codes">
+							<input class="code_input" id="codeNo" type="text" placeholder="请输入验证码">
+							<button class="getCodes" id="getcode">获取验证码</button>
+						</div>						
+				</div>				
+			</div>
+			<div class="register_submit" id="register_submit"></div>
+		</div>
+
+			
+	</div>
+
+	<div id="errorTips" class="error">注册失败，该手机号已注册，请勿重复注册(3秒)</div>
+
+</body>
+
+</html>

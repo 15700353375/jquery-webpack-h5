@@ -1,0 +1,217 @@
+// html{
+//   width:100%;
+//   height:100%;
+//   font-size: -moz-calc(100vw/7.2);
+//   font-size: -webkit-calc(100vw/7.2);
+//   font-size: calc(100vw/7.2);
+//   overflow: hidden;
+// }
+html,body{
+  margin: 0;
+  padding: 0;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: PingFangHK-Regular;
+}
+
+
+.clearfix::after {
+  content: ".";
+  clear: both;
+  display: block;
+  overflow: hidden;
+  font-size: 0;
+  height: 0;
+}
+.clearfix {
+  zoom: 1;
+}
+
+
+.main{
+  width: 100%;
+  height: 100%;  
+  overflow-y: auto;
+  box-sizing: border-box;
+
+  .logo{
+    width: 100%;
+    height: 1880px;
+    background: url('./static/p1.jpg') no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+
+  .main_join{
+    position: absolute;
+    top: 1133px;
+    width: 100%;
+
+    .immediately_register{
+      width: 634px;
+      height: 124px;
+      background: url('./static/fenxiang_button_lijizhuce.png') no-repeat;
+      background-size: contain;
+      margin: 0 auto;
+      cursor: pointer;
+    }
+  }
+
+    
+}
+
+
+
+
+
+.modal{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0,0,0,0.80);
+  z-index: 99999;
+  left: 0;
+  top: 0;
+
+  .modal_con{
+    width: 632px;
+    height: 850px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -425px;
+    margin-left: -316px;
+    // 注册
+    .register_content{
+      width: 100%;
+      height: 650px;
+      background: url('./static/fenxiang_zhuce_page2.png') no-repeat;
+      background-size: contain;
+      position: relative;
+      .register_main{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 350px;
+        box-sizing: border-box;
+        padding-left: 32px;
+        .register_item{
+          width: 560px;
+          height: 80px;
+          border-radius: 4px;
+          background: #fff;
+          border: none;
+          margin-top: 24px;
+          font-size: 26px;
+          color: #031901;
+          letter-spacing: 0.87px;
+          text-align: justify;
+          padding-left: 31px;
+          box-sizing: border-box;
+        }
+
+        .codes{
+          width: 560px;
+          height: 80px;
+          margin-top: 24px;
+          .code_input{
+            width: 316px;
+            height: 80px;
+            border-radius: 4px;
+            background: #fff;
+            border: none;
+            font-size: 26px;
+            color: #031901;
+            letter-spacing: 0.87px;
+            text-align: justify;
+            padding-left: 31px;
+            box-sizing: border-box;
+            float: left;            
+          }
+          .getCodes{
+            margin: 0;
+            padding: 0;
+            border: none;  
+            outline: none; 
+            width: 224px;
+            height: 80px;
+            display: inline-block;
+            float: right;
+            background: url('./static/fenxiang_button_yanzhengma_page2.png') no-repeat;
+            background-size: contain;
+            font-size: 30px;
+            line-height: 80px;
+            color: #FFFFFF;
+            letter-spacing: 1px;
+            text-align: center;
+            &:disabled{
+              opacity: 0.5;
+              // color: #24A3DC;
+              // border-left: 1px solid #24A3DC;
+            }
+          }
+        }
+      }
+    }
+
+    .register_submit{
+      width: 632px;
+      height: 124px;
+      background: url('./static/fenxiang_button_lijizhuce.png') no-repeat;
+      background-size: contain;
+      cursor: pointer;
+      margin-top: 75px;
+    }
+
+  }
+
+  .modal_sucess{
+    height: 830px;
+    margin-top: -415px;
+    // 注册成功
+    .success{
+      width: 100%;
+      height: 636px;
+      background: url('./static/fenxiang_zhucechenggong_page3.png') no-repeat;
+      background-size: contain;
+    }
+    .downLoad{
+      display: block;
+      width: 632px;
+      height: 124px;
+      background: url('./static/fenxiang_button_kuaisuxiazai_page3.png') no-repeat;
+      background-size: contain;
+      cursor: pointer;
+      margin-top: 70px;
+    }
+  }
+}
+
+.error{
+  width: 280px;
+  height: auto;
+  background: rgba(0,0,0,0.8);
+  border-radius: 8px;
+  font-family: "PingFang SC","Hiragino Sans GB","Microsoft Yahei",arial,"\5b8b\4f53","Helvetica Neue",Helvetica,STHeiTi,sans-serif;
+  font-size: 24px;
+  line-height: 40px;
+  color: #FFFFFF;
+  text-align: center;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-left: -140px;
+  margin-top: -60px;
+  padding: 30px 10px;
+  display: none;
+  z-index: 99999;
+  /* line-height: 0.66rem; */
+}
+
