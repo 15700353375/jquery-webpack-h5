@@ -17,9 +17,13 @@ module.exports = {
     },
     //出口设置
     output: {
+        // publicPath 是将图片发布到哪里
+        // publicPath: './' ,
+        // publicPath: process.env.NODE_ENV === 'production' ?
+        // './static/' : '/',//给require.ensure用
         path: path.resolve(__dirname, './dist'),
         filename: '[name].[hash].bundle.js',
-        chunkFilename: '[name].chunk.js'
+        chunkFilename: '[name].chunk.js',
     },
     //加载器配置
     module: {
@@ -28,20 +32,18 @@ module.exports = {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
                     use: [ 'css-loader'],
-                    fallback: 'style-loader'
-                  })
-                // use: [
-                //     'style-loader',
-                //     'css-loader'
-                // ]
+                    fallback: 'style-loader',
+                    // publicPath 是将图片发布到哪里
+                    publicPath: './static/'
+                })
             },
             {
               test: /\.less$/,
               use: ExtractTextPlugin.extract({
                 use: [ 'css-loader', 'postcss-loader', 'less-loader'],
-                fallback: 'style-loader'
+                fallback: 'style-loader',
+                publicPath: './static/'
               })
-            //   use: [ 'style-loader', 'css-loader', 'postcss-loader', 'less-loader']
             },
             {
                 test: /\.js$/,
@@ -85,6 +87,7 @@ module.exports = {
         }
         ]),
         new webpack.HotModuleReplacementPlugin(),//热加载插件
+        // 打包之前删除之前的dist
         new CleanWebpackPlugin(['dist']),
         new webpack.optimize.UglifyJsPlugin({//js代码压缩
             sourceMap: false,
@@ -92,18 +95,18 @@ module.exports = {
                 warnings: false
             }
         }),
+        // 提供jquery开发环境
         new webpack.ProvidePlugin({
           $: 'jquery',
           jQuery: 'jquery',
           'window.jQuery': 'jquery',
           'window.$': 'jquery',
         }),
+        // 入口html文件
         new HtmlWebpackPlugin({
           template: './index.html'
         }),
-        // new HtmlWebpackPlugin({
-        //     template: './attend.html'
-        //   }),
+        // 打包的时候，设置全局变量，方便dev开发环境和生产环境
         new webpack.DefinePlugin({
           'process.env': {
             NODE_ENV: '"production"'
